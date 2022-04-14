@@ -1,6 +1,6 @@
 # 千萬不要修改 Makefile!!!
 
-dir_hw = homework
+dir_hw = src
 dir_check = tools
 
 all: main
