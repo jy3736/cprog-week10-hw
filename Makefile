@@ -1,14 +1,22 @@
 # 千萬不要修改 Makefile!!!
 
+dir_hw = homework
+dir_check = tools
+
 all: main
 
-main:
-	g++ -std=c++11 src/main.cpp -o src/main
+hw01:
+	g++ -std=c++11 $(dir_hw)/$@/main.cpp -o $(dir_hw)/$@/main
 
-test1: main
-	src/main | python tools/check.py
+hw01_chk: hw01
+	$(dir_hw)/$</main | python $(dir_check)/check.py $<
 	
-test: test1
 
+hw02:
+	g++ -std=c++11 $(dir_hw)/$@/main.cpp -o $(dir_hw)/$@/main
+
+hw02_chk: hw02
+	$(dir_hw)/$</main | python $(dir_check)/check.py $<
+	
 clean:
-	rm src/main
+	rm $(dir_hw)/hw??/main

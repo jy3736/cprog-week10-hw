@@ -3,8 +3,8 @@
 import sys
 
 
-def main():
-    expected = "Hello Github Classroom"
+def main(msg):
+    expected = f"Hello {msg}"
     result = ""
     for line in sys.stdin:
         result += line
@@ -19,4 +19,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    msg = sys.argv[1]
+    main(msg)
